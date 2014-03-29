@@ -16,44 +16,52 @@
     </div>
     <br>
 
-
-
     <div id="gallery-thumbnails">
-        <img alt="Previous image" class="scroll-arrow" id="rew-link" src="$BaseHref/themes/mainlinetrack/images/arrow-scroll-left.png" >
-        <div id="thumbnail-slider" class="gallery-thumbs">
+        <% if $Picture.count > 3%>
+            <img alt="Previous image" class="scroll-arrow" id="rew-link" src="$BaseHref/themes/mainlinetrack/images/arrow-scroll-left.png" >
 
+        <% end_if%>
+        <div id="thumbnail-slider" class="gallery-thumbs">
                     <% loop $Picture %>
                         <a id="$Name" href="#" onclick="changeActiveItem($pos);"><img  id="$Name" title="$Title" alt="$Title" src="$PaddedImage(90,51).URL"></a>
                     <% end_loop %>
-
          </div>
-        <img alt="Next image" class="scroll-arrow" id="ffw-link" src="$BaseHref/themes/mainlinetrack/images/arrow-scroll-right.png" >
-
+        <% if $Picture.count > 3%>
+            <img alt="Next image" class="scroll-arrow" id="ffw-link" src="$BaseHref/themes/mainlinetrack/images/arrow-scroll-right.png" >
+        <% end_if%>
 
     </div>
+
+    <div id="scroll-worded">
+        <div id="scroll-text-info">Photo <span id="scroll-info-current">1</span> of <span
+                id="scroll-info-total">$Picture.count</span></div>
+    </div>
+
+
 </div>
 
 
 
 <script>
-
-
     /* --------------------------------------
 -- Settings and init
 -------------------------------------- */
-    var giImgTotal = $Picture.count; /* Number of images in gallery */
+    var giImgTotal = $Picture.count + 2 ; /* Number of images in gallery */
     var giCurrentImage = 1; /* Image displayed on init */
 
     var giSliderPosition = 1; /* Initial position for scroller */
-    var giThumbsShown = 5; /* Thumbnails shown on scroller */
+    var giThumbsShown = 3; /* Thumbnails shown on scroller */
     var giTotalPositions = giImgTotal - giThumbsShown; /* Number of possible positions for scroller */
 
     /* --------------------------------------
     -- Hide and/or show slider arrow buttons
     -------------------------------------- */
     function showHideSliderButtons() {
+        /* Right side*/
         if (giSliderPosition == giTotalPositions) toggleSliderArrows(1, 0);
+        /* left side*/
         else if (giSliderPosition == 0) toggleSliderArrows(0, 1);
+        /* middle */
         else toggleSliderArrows(1, 1);
     }
 
@@ -165,11 +173,6 @@
     });
 
 
-
-
-
-
-
     jQuery("#thumbnail-slider").animate({
         left: "-" + 72 * 0 + "px"
     });
@@ -212,6 +215,7 @@
 #gallery-large-image a.arrow-inactive {
     height: 0;
     overflow: hidden;
+    z-index: -1;
     width: 0;
 }
 
@@ -228,20 +232,9 @@
 }
 .gallery-thumbs {
     white-space: nowrap;
-    display: inline-block;
-    background-color: transparent;
-    font-size: 0;
-    /*height: 49px;*/
-    left: 26px;
+    position: relative;
+}
 
-    padding: 0;
-    position: relative;
-    width:360px;
-}
-.gallery-thumbs a {
-    /*float: left;*/
-    position: relative;
-}
 .gallery-thumbs a img {
     border:2px solid #5A5A5A;
     height:45px;
@@ -263,7 +256,6 @@ img.scroll-arrow {
     /*cursor: pointer;*/
     position: absolute;
     z-index: 99;
-    left: 0px;
     top: 0px;
 }
 #ffw-link {
@@ -281,17 +273,6 @@ img.scroll-arrow {
     cursor: auto;
     filter: alpha(opacity=20);
     opacity: 0.2;
-}
-
-/* ------------------------------------------------------ */
-/* - Gallery carousel - caption, title ------------------ */
-/* ------------------------------------------------------ */
-
-#gallery-image-info h3 {
-    color: #DDD;
-    font-weight: bold;
-    margin-top: 0;
-    width: 430px;
 }
 
 .scroll-arrow{

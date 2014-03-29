@@ -53,7 +53,7 @@ class Page_Controller extends ContentController
         Requirements::themedCSS('print', 'null', 'print');
         Requirements::css(THEMES_DIR . '/mainlinetrack/cactus-slider/cactus-slider.css');
         Requirements::themedCSS('lightbox');
-        Requirements::themedCSS('photo-gallery');
+
 
 
         Requirements::javascript(THEMES_DIR . '/mainlinetrack/javascript/jquery-1.11.0.min.js');
@@ -61,7 +61,7 @@ class Page_Controller extends ContentController
         Requirements::javascript(THEMES_DIR . '/mainlinetrack/javascript/cactus.js');
         Requirements::javascript(THEMES_DIR . '/mainlinetrack/cactus-slider/cactus-slider.js');
         Requirements::javascript(THEMES_DIR . '/mainlinetrack/javascript/placeholders.min.js');
-        Requirements::javascript(THEMES_DIR . '/mainlinetrack/javascript/photo-gallery.js');
+
 
     }
 
