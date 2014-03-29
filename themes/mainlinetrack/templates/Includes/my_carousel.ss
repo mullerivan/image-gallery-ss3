@@ -6,19 +6,18 @@
             <% else %>
             <div class="item" id="$Name">
             <% end_if %>
-            <div class="view-full-image">
-                <a href="$Filename" data-lightbox="carousel2"><img title="view full size image"
-                                                                   alt="view full size image"
-                                                                   src="$BaseHref/themes/mainlinetrack/images/zoomin.png"/></a>
-            </div>
+                <div class="view-full-image">
+                    <a href="$Filename" data-lightbox="carousel2"><img title="view full size image"
+                                                                       alt="view full size image"
+                                                                       src="$BaseHref/themes/mainlinetrack/images/zoomin.png"/></a>
+                </div>
             <a href="$Filename" data-lightbox="carousel"><img title="$Title" alt="$Title"
                                                               src="$PaddedImage(368,206).URL"/></a>
-        </div>
+            </div> <%--END item--%>
         <% end_loop %>
-    </div>
-    </div>
+    </div> <%--END carousel-inner--%>
+</div>     <%--END myCarousel--%>
     <br>
-
     <div id="gallery-thumbnails">
         <% if $Picture.count > 3%>
             <img alt="Previous image" class="scroll-arrow" id="rew-link"
@@ -27,7 +26,8 @@
         <% end_if%>
         <div id="thumbnail-slider" class="gallery-thumbs">
             <% loop $Picture %>
-                <a id="$Name" href="#" onclick="changeActiveItem($pos);"><img id="$Name" title="$Title" alt="$Title" src="$PaddedImage(90,51).URL"></a>
+                <a id="$Name" href="#" onclick="changeActiveItem($pos);"><img id="$Name" title="$Title" alt="$Title"
+                                                                              src="$PaddedImage(90,51).URL"></a>
             <% end_loop %>
         </div>
         <% if $Picture.count > 3%>
@@ -41,9 +41,80 @@
         <div id="scroll-text-info">Photo <span id="scroll-info-current">1</span> of <span
                 id="scroll-info-total">$Picture.count</span></div>
     </div>
-
-
 </div>
+
+
+
+<style type="text/css">
+    /* ------------------------------------------------------ */
+    /* - Gallery carousel - thumbnails ---------------------- */
+    /* ------------------------------------------------------ */
+    #gallery-thumbnails {
+        position: relative;
+    }
+
+    #thumbnail-slider {
+        margin: 0 10px 0 10px;
+
+    }
+
+    .gallery-thumbs {
+        white-space: nowrap;
+        position: relative;
+    }
+
+    .gallery-thumbs a img {
+        border: 2px solid #5A5A5A;
+        height: 45px;
+        margin: 0 1px;
+        width: 66px;
+    }
+
+    .gallery-thumbs a img:hover {
+        border: 2px solid #AAAAAA;
+    }
+
+    .gallery-thumbs a.selected-image img {
+        border: 2px solid #DDDDDD;
+    }
+
+    .zoom-icon img {
+        filter: alpha(opacity=50);
+        opacity: 0.5;
+    }
+
+    img.scroll-arrow {
+        /*cursor: pointer;*/
+        position: absolute;
+        z-index: 99;
+        top: 0px;
+    }
+
+    #ffw-link {
+        left: 304px;
+    }
+
+    #rew-link {
+        left: -10px;
+    }
+
+    #gallery-thumbnails img.scroll-arrow:hover {
+        filter: alpha(opacity=80);
+        opacity: 0.7;
+    }
+
+    #gallery-thumbnails img.arrow-inactive,
+    #gallery-thumbnails img.arrow-inactive:hover {
+        cursor: auto;
+        filter: alpha(opacity=20);
+        opacity: 0.2;
+        visibility: hidden;
+    }
+
+    .scroll-arrow {
+        height: 50px;;
+    }
+</style>
 
 
 <script>
@@ -180,8 +251,6 @@
             return false;
         });
     });
-
-
     jQuery("#thumbnail-slider").animate({
         left: "-" + 72 * 0 + "px"
     });
@@ -191,108 +260,4 @@
     function changeActiveItem(pos) {
         jQuery('.carousel').carousel(pos - 1)
     }
-
-
 </script>
-
-
-<style type="text/css">
-    /* ------------------------------------------------------ */
-    /* - Gallery carousel - large image --------------------- */
-    /* ------------------------------------------------------ */
-
-    #gallery-large-image table {
-        height: 100%;
-        margin: 0;
-        width: 100%;
-    }
-
-    #gallery-large-image table td {
-        font-size: 0;
-        padding: 0;
-        text-align: center;
-    }
-
-    #gallery-large-image img {
-        max-height: 350px;
-        max-width: 600px;
-        padding: 1px;
-    }
-
-    #gallery-large-image a.arrow-inactive {
-        height: 0;
-        overflow: hidden;
-        z-index: -1;
-        width: 0;
-    }
-
-    /* ------------------------------------------------------ */
-    /* - Gallery carousel - thumbnails ---------------------- */
-    /* ------------------------------------------------------ */
-
-    #gallery-thumbnails {
-        position: relative;
-    }
-
-    #thumbnail-slider {
-        margin: 0 10px 0 10px;
-
-    }
-
-    .gallery-thumbs {
-        white-space: nowrap;
-        position: relative;
-    }
-
-    .gallery-thumbs a img {
-        border: 2px solid #5A5A5A;
-        height: 45px;
-        margin: 0 1px;
-        width: 66px;
-    }
-
-    .gallery-thumbs a img:hover {
-        border: 2px solid #AAAAAA;
-    }
-
-    .gallery-thumbs a.selected-image img {
-        border: 2px solid #DDDDDD;
-    }
-
-    .zoom-icon img {
-        filter: alpha(opacity=50);
-        opacity: 0.5;
-    }
-
-    img.scroll-arrow {
-        /*cursor: pointer;*/
-        position: absolute;
-        z-index: 99;
-        top: 0px;
-    }
-
-    #ffw-link {
-        left: 304px;
-    }
-
-    #rew-link {
-        left: -10px;
-    }
-
-    #gallery-thumbnails img.scroll-arrow:hover {
-        filter: alpha(opacity=80);
-        opacity: 0.7;
-    }
-
-    #gallery-thumbnails img.arrow-inactive,
-    #gallery-thumbnails img.arrow-inactive:hover {
-        cursor: auto;
-        filter: alpha(opacity=20);
-        opacity: 0.2;
-        visibility: hidden;
-    }
-
-    .scroll-arrow {
-        height: 50px;;
-    }
-</style>
