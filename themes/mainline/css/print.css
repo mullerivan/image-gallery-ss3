@@ -1,0 +1,25 @@
+#header { padding: 1%; }
+#tabs {display:none;}
+#sidebar {display: none;}
+.btn_yellow {display: none;}
+#print_link {display: none;}
+#divisions {display: none;}
+#viewLargePhotoLink { display: none;}
+#tagline {display: none;}
+#rightBlockLinks {display: none;}
+#content {
+	width: auto;
+	height:100%;
+	margin: 1% 5%;
+	padding: 0;
+	float: none !important;
+	font-size: 10pt;
+	overflow: visible !important;
+	}
+
+#container { border: 0; }
+
+#print_contact_info {display: block;}
+#print_disclaimer {display: block; margin-top: 20px; }
+#print_disclaimer img { max-width: 100% !important;}
+#pageFunctions {display: none;}

@@ -1,0 +1,21 @@
+#header {display: none;}
+#tabs {display:none;}
+#sidebar {display: none;}
+.btn_yellow {display: none;}
+#print_link {display: none;}
+#RTnavigation{display: none;}
+#divisions{display: none;}
+#submenu{display: none;}
+#right_block a#backLink {display: none;}
+#footercontainer {display: none;}
+body #printHeader {
+	width: 90%;
+	height: 300px;
+	display: block;
+	padding-bottom: 20px;
+}
+
+body #printHeader img {
+	display: block;
+	margin-bottom: 20px;
+}

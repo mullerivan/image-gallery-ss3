@@ -1,0 +1,21 @@
+de:
+  _config:
+    WRONG_MODULE_FOLDER: 'Der Ordner "{folderName}" muß in "{moduleName}" umbenannt werden, um das {moduleName} Module nutzen zu können.'
+
+  cwsFolderGalleryPage:
+    SINGULARNAME: 'Bildergalerie'
+    PLURALNAME: 'Bildergalerien'
+    CHOOSE_IMAGE_FOLDER: 'Wähle einen Bilderornder (Unterordner in assets/cwsoft-foldergallery/)'
+
+  Foldergallery:
+    ALBUM: 'Album'
+    ALBUM_HAS_NO_IMAGES: 'Diesem Album sind noch keine Bilder zugeordnet (evtl. Medienordner synchronisieren).'
+    BACK_TO_ALBUM_OVERVIEW: 'Zurück zur Albenübersicht'
+    DISPLAYED_ALBUMS: 'Angezeigte Alben'
+    DISPLAYED_IMAGES: 'Angezeigte Bilder'
+    NOTE: 'Hinweis'
+    NUMBER_OF_IMAGES: '(Bilder: {images})'
+    NUMBER_OF_SUB_ALBUMS: '(Unteralben: {subAlbums})'
+    START_SLIDESHOW: 'Diashow starten'
+    PREVIOUS: 'zurück'
+    NEXT: 'vor'

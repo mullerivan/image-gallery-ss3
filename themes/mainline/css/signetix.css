@@ -1,0 +1,954 @@
+/* CSS Reset **************** */
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
+    margin: 0;
+    padding: 0;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin: 0 0 15px 0;
+}
+
+fieldset, img {
+    border: none;
+}
+
+address, caption, cite, code, dfn, strong, th, var {
+    font-style: normal;
+    font-weight: normal;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+caption, th {
+    text-align: left;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+
+q:before, q:after {
+    content: '';
+}
+
+abbr, acronym {
+    border: 0;
+}
+
+/* CSS Reset End ************* */
+
+body {
+    margin: 10px 0 0 0;
+    font: 9pt Arial, Helvetica, sans-serif;
+    line-height: 14pt;
+    color: #333;
+}
+
+strong {
+    font-weight: bold;
+}
+
+em {
+    font-style: italic;
+}
+
+p {
+    margin: 0 0 10px 0;
+}
+
+h1, h1 a {
+    font: 16pt Verdana, Geneva, sans-serif;
+    color: #383035;
+    margin: 0 0 10px 0;
+}
+
+h2, h2 a {
+    font: 11pt Verdana, Geneva, sans-serif;
+    color: #9F9995;
+    margin: 0 0 5px 0;
+    font-weight: bold;
+}
+
+h3, h3 a {
+    font-size: 10pt;
+    margin: 0 0 0 0;
+}
+
+h4, h4 a h4 {
+    color: #ffffff;
+    padding: 7px;
+    font-weight: bolder;
+    clear: both;
+    font-size: 24px;
+    line-height: 27px;
+    text-align: center;
+}
+
+hr {
+    margin: 20px 0 20px 0;
+    clear: both;
+}
+
+.hr {
+    height: 1px;
+    line-height: 1px;
+    margin: 15px 0 15px 0;
+    clear: both;
+    border-bottom: 1px solid #9F9995;
+}
+
+.vc {
+    vertical-align: middle;
+}
+
+.fright {
+    float: right;
+}
+
+a {
+}
+
+a:visited {
+}
+
+a:hover {
+}
+
+a:active {
+}
+
+blockquote {
+}
+
+fieldset {
+    border: 1px solid #ccc;
+}
+
+legend {
+}
+
+.txtfield {
+    border: 1px solid #ccc;
+}
+
+.w250 {
+    width: 250px;
+}
+
+.btn_yellow {
+    background: #FFDF32;
+    border: 1px solid #DF8D00;
+    color: #003159;
+    padding: 5px;
+    width: 200px;
+}
+
+.btn_yellow:hover {
+    background: #FFC30F;
+    border: 1px solid #DF8D00;
+    color: #003159;
+    padding: 5px;
+}
+
+.btn_yellow_short {
+    background: #FFDF32;
+    border: 1px solid #DF8D00;
+    color: #003159;
+    padding: 5px;
+    width: 120px;
+}
+
+.btn_yellow_short:hover {
+    background: #FFC30F;
+    border: 1px solid #DF8D00;
+    color: #003159;
+    padding: 5px;
+}
+
+img.rspace {
+    margin: 0 15px 0 0;
+}
+
+img.lspace {
+    margin: 0 0 0 15px;
+}
+
+#header {
+    width: 880px;
+    height: 105px;
+    margin: 0 auto;
+    padding: 0 10px 0 10px;
+    border: 1px solid #DBDBDB;
+    background: #fff;
+}
+
+#divisions {
+    width: 880px;
+    height: 30px;
+    margin: 0 auto 5px auto;
+    padding: 0 10px 0 10px;
+    border: 1px solid #DBDBDB;
+    background: #fff;
+    line-height: 30px;
+}
+
+#divisions .divisions_entry {
+    padding: 0 10px 0 0;
+    font-weight: bold;
+}
+
+#divisions .divisions_entry a {
+    color: #000;
+}
+
+#logo {
+    float: left;
+}
+
+#tagline {
+    float: right;
+    text-align: right;
+    font-size: 16pt;
+    color: #888;
+    font-style: italic;
+}
+
+#tabs {
+    width: 900px;
+    margin: 0 auto;
+    clear: both;
+    text-align: center;
+    height: 40px;
+    text-align: center;
+}
+
+/* #phone { float:right; font-size:12pt; line-height:40px; color:#e0e0e0; margin:0 10px 0 0;} */
+#tab {
+    list-style: none; /*No bullets*/
+    text-align: left;
+}
+
+#tab li {
+    float: left;
+    position: relative; /*New stacking context for the submenu which is AP'd*/
+}
+
+#tab li a {
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 10px 0 10px;
+    color: #FFFFFF;
+    text-decoration: none;
+    border-left: 1px solid #595351;
+    border-right: 1px solid #302d2c;
+}
+
+#tab li li a {
+    background: #ffc104 !important;
+    width: 143px;
+    color: #000;
+    height: 30px;
+    line-height: 30px;
+}
+
+#tab li li a:hover {
+    color: #fff !important;
+}
+
+#tab li ul {
+    position: absolute; /*Allow for the dropdown to work and work with it easily*/
+    top: 100%; /*Move it vertically 100% of the <li>. Stable method*/
+    left: 0; /*Set a left coordinate instead of relying on auto positioning.*/
+    margin-left: -999em; /*Move it off the screen with a huge negative left margin. Very stable*/
+    z-index: 99; /* move it up! */
+    border-bottom: 1px solid #302d2c;
+}
+
+#tab li li {
+    float: none; /*Unfloat it so it doesnt go in a line*/
+    list-style: none; /*Remove bullets*/
+    white-space: nowrap;
+}
+
+#tab li:hover {
+    visibility: visible; /*Fix an IE7 sticky bug*/
+}
+
+#tab li:hover ul, #tab li.sfhover ul {
+    margin-left: 0; /*Set the left margin to 0 on hover, and the JS hover.*/
+}
+
+#tab li ul.hideme {
+    visibility: hidden;
+}
+
+#container {
+    width: 900px;
+    margin: 10px auto 0 auto;
+    border: 1px solid #DBDBDB;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+#sidebar {
+    width: 160px;
+    margin: 15px 0 0 0;
+    padding: 0 0 0 15px;
+    float: left;
+    background-color: #fff;
+}
+
+
+img.leftAlone, img.left {
+  border: 3px solid whitesmoke;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+img.leftAlone:hover, img.left:hover {
+  box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+}
+.carousel-actions{
+  text-align: center;
+}
+#navigation {
+    width: 160px;
+    float: left;
+    clear: left;
+}
+
+#navigation ul li {
+    line-height: 25px;
+    text-indent: 15px;
+    width: 160px;
+    border: 1px dotted #FEDE31;
+}
+
+#navigation ul li a {
+    width: 160px;
+    color: #5A5552;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+}
+
+#navigation ul li a:visited {
+    color: #5A5552;
+}
+
+#navigation ul li a:hover {
+    color: #000;
+    font-weight: bold;
+    background: #d0d0d0 no-repeat left center;
+    display: block;
+}
+
+#navigation ul li a:active {
+}
+
+#navigation ul li a.current {
+    color: #000;
+    background: #d0d0d0 no-repeat left center;
+    display: block;
+}
+
+#content {
+    padding: 15px 15px 15px 0;
+    width: 680px;
+    float: right;
+    background-color: #fff;
+}
+
+#specsheet {
+    width: 405px;
+    float: right;
+    overflow: hidden;
+}
+
+#specimage {
+    border: 1px solid #ccc;
+    float: right;
+    margin: 0 0 15px 0;
+    width: 400px;
+}
+
+#specsheet h2 {
+    font-size: 14pt;
+    font-weight: bold;
+    color: #cda015;
+    margin: 0 0 5px 0;
+}
+
+#specsheet h1 {
+    font-size: 11pt;
+    font-weight: bold;
+}
+
+#specs td {
+    padding: 2px 0 2px 0;
+    border-bottom: 1px solid #e8e8e8;
+    font-size: 10pt;
+}
+
+#specs td.legend {
+    padding: 0 7px 0 0;
+}
+
+table.photoOverview {
+    border: none;
+}
+
+table.photoOverview tbody tr td {
+    padding: 5px;
+    border: none;
+}
+
+table.photoOverview tbody tr td img.centerOverview {
+    margin: 5px;
+    text-align: center;
+}
+
+.spacer {
+    line-height: 5px !important;
+    height: 5px !important;
+    border: none !important;
+}
+
+.noborder {
+    border: none !important;
+}
+
+#specthumbs {
+    width: 400px;
+    float: right;
+    clear: right;
+}
+
+#specthumbs td {
+    padding: 3px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#enquiry {
+    margin: 15px 0 0 0;
+    padding: 15px;
+    border: 1px solid #ccc;
+    background: #EFEDE0;
+    width: 350px;
+}
+
+#enquiry h3 {
+    font: 10pt Verdana, Geneva, sans-serif;
+    color: #cda015;
+    margin: 0 0 15px 0;
+    font-weight: bold;
+}
+
+#enquiry label {
+    width: 120px;
+    display: block;
+    float: left;
+    clear: both;
+    margin: 0;
+    padding: 0;
+}
+
+#footercontainer {
+    height: 40px;
+    clear: both;
+}
+
+#footer {
+    width: 900px;
+    margin: 0 auto;
+    padding: 10px 0 0 0;
+}
+
+#ftright {
+    float: right;
+    text-align: right;
+}
+
+#footerLeft {
+    float: left;
+    width: 600px;
+}
+
+#enquiry fieldset {
+    border: 0;
+}
+
+#enquiry .middleColumn {
+    float: left;
+    width: 350px;
+    margin: 0;
+    background-color: transparent;
+}
+
+#quicksearch {
+    width: 162px;
+    padding: 0;
+    margin: 0 0 10px 0;
+}
+
+#quicksearch form {
+    padding: 0;
+    margin: 0;
+}
+
+#quicksearch fieldset {
+    padding: 10px;
+    margin: 0;
+}
+
+#quicksearch input {
+    font-size: 0.9em;
+    font-weight: normal;
+    background-color: #eee;
+}
+
+#quicksearch #SearchForm_SearchForm .middleColumn {
+    margin: 0;
+}
+
+#quicksearch #Search {
+    overflow: hidden;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+ul#SearchResults li {
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0 10px 0;
+}
+
+#newsletter {
+    width: 160px;
+    padding: 0;
+    margin: 0 0 10px 0;
+    overflow: hidden;
+    border: 1px solid #ccc;
+}
+
+#newsletter form {
+    padding: 0;
+    margin: 10px 0 0 0;
+}
+
+#newsletter fieldset {
+    padding: 0 10px 10px 10px;
+    margin: 0;
+    border: 0;
+}
+
+#newsletter input#Form_Newsletter_YourEmail {
+    font-size: 0.9em;
+    font-weight: normal;
+    background-color: #eee;
+    border: 2px solid #ccc;
+    color: #666666;
+    width: 130px;
+}
+
+#newsletter input#YourPhone-Number {
+    font-size: 0.9em;
+    font-weight: normal;
+    background-color: #eee;
+    border: 2px solid #ccc;
+    color: #666666;
+    width: 130px;
+    margin-bottom: 10px;
+}
+
+#newsletter input#Form_Newsletter_YourName {
+    font-size: 0.9em;
+    font-weight: normal;
+    background-color: #eee;
+    border: 2px solid #ccc;
+    color: #666666;
+    width: 130px;
+    margin-bottom: 10px;
+}
+
+#newsletter input#Form_Newsletter_YourCompany {
+    font-size: 0.9em;
+    font-weight: normal;
+    background-color: #eee;
+    border: 2px solid #ccc;
+    color: #666666;
+    width: 130px;
+    margin-bottom: 10px;
+}
+
+#newsletter input#Form_Newsletter_action_subscribe {
+    margin: 0 10px 10px 10px;
+    font-size: 1em;
+    font-weight: normal;
+    background-color: #eee;
+}
+
+#newsletter #Form_Newsletter .middleColumn {
+    margin: 0;
+    padding: 0 5px 0 0;
+    width: 133px;
+    background: white;
+}
+
+#newsletter .message {
+    border: 0;
+    color: #f34;
+    font-size: 10px;
+    margin: 0;
+    padding: 0;
+}
+
+#newsletter label {
+    font-size: 12px;
+}
+
+#newsletter h4 {
+    font: 11pt Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-align: left;
+    color: #999;
+    padding: 0;
+}
+
+.galleryList .details {
+    font-size: 0.9em;
+    line-height: 11px;
+}
+
+/**** UsedEquipmentHolder added by db@signetix.net****/
+
+.UsedEquipmentImage {
+    float: left;
+    padding: 5px;
+}
+
+.UsedEquipmentImage .mainimage {
+    width: 120px;
+    text-align: left;
+}
+
+.UsedEquipmentTeaser {
+    width: 520px; /*min-height: 150px;*/
+}
+
+.UsedEquipmentPrice {
+    float: right;
+    text-align: right;
+    width: 110px;
+}
+
+.UsedEquipmentPrice h1 {
+    font-size: 11px !important;
+}
+
+.UsedEquipmentCell {
+    border: 0px solid black;
+}
+
+.UsedEquipmentDiv {
+    border: 1px solid #d2d2d2;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.clear {
+    clear: both;
+}
+
+#galleryoverview td {
+    border: none;
+    padding: 10px;
+    vertical-align: top;
+}
+
+#galleryoverview p {
+    font-weight: bold;
+    text-align: center;
+}
+
+#galleryoverview h1 {
+    font-size: 20px;
+    color: #888;
+    text-align: center;
+    margin: 0;
+}
+
+.typography address {
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 18px;
+}
+
+#Form_Form {
+    margin: 15px 0 0 0;
+    padding: 15px;
+    border: 1px solid #ccc;
+    background: #EFEDE0;
+    width: 330px;
+}
+
+#Form_Form h3 {
+    font: 10pt Verdana, Geneva, sans-serif;
+    color: #cda015;
+    margin: 0 0 15px 0;
+    font-weight: bold;
+}
+
+#Form_Form label {
+    width: 300px;
+    display: block;
+    float: left;
+    clear: both;
+    font-size: 13px;
+    margin-bottom: 0;
+}
+
+#Form_Form fieldset {
+    border: none;
+}
+
+#bookmark {
+    clear: both;
+    overflow: auto;
+    vertical-align: bottom;
+    vertical-align: middle;
+}
+
+#bookmark a {
+    text-decoration: none;
+    font-weight: bolder;
+    color: #666666;
+    font-size: 13px;
+    line-height: 14px;
+    text-align: left;
+}
+
+#bookmark a:visited {
+    color: #aaaaaa;
+}
+
+#bookmark a:hover {
+    color: #FEC60D;
+}
+
+#bookmark img {
+    float: left;
+    margin-right: 5px;
+}
+
+#bookmarklink {
+    margin-top: 14px;
+    display: block;
+}
+
+#intro p {
+    padding: 15px;
+}
+
+#UsedEquipmentList {
+    clear: both;
+    overflow: auto;
+}
+
+#UsedEquipmentList .UsedEquipmentTeaser h1 {
+    margin: 0;
+    padding: 0;
+}
+
+#enquiry #RecaptchaField {
+    width: 350px;
+    float: left;
+    margin: 10px 0 10px 0;
+}
+
+#Form_ProductInquireForm_error {
+    color: red;
+    font-weight: bold;
+    border: none !important;
+    background: none !important;
+    font-size: 1.2em;
+    padding: 0;
+    margin: 0 0 15px 0;
+}
+
+#rightBlockLinks {
+    width: 100%;
+    margin: 0 0 20px 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#print_link {
+    width: 165px;
+    float: right;
+    text-align: right;
+    margin: 15px 0 0 0;
+    padding: 0;
+}
+
+#back_link {
+    width: 200px;
+    float: right;
+    text-align: right;
+    margin: 15px 0 0 0;
+    padding: 0;
+}
+
+#enquire_button {
+    width: 140px;
+    float: right;
+    text-align: right;
+    margin: 10px 0 0 0;
+    padding: 0;
+}
+
+#print_link a, #back_link a, #sendToFriendLink a {
+    text-decoration: none;
+    color: #32327A;
+    font-size: 10pt;
+    line-height: 16px;
+    font-weight: bold;
+}
+
+#print_link a img, #back_link a img, #sendToFriendLink a img {
+    vertical-align: bottom;
+}
+
+#print_link a:hover, #back_link a:hover, #sendToFriendLink a:hover {
+    color: #7777BC;
+}
+
+#viewLargePhotoLink {
+    width: 400px;
+    float: right;
+    clear: both;
+    text-align: center;
+    padding: 5px;
+    text-decoration: none;
+    line-height: 16px;
+    color: #9999BC;
+    margin: 0 0 0 5px;
+}
+
+#viewLargePhotoLink:hover {
+    color: #7777BC;
+}
+
+#viewLargePhotoLink img {
+    margin-top: 3px;
+}
+
+.typography #RecaptchaField {
+    margin: 10px 0;
+}
+
+.typography #RecaptchaField .message {
+    color: #FF3344;
+    border: 0;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+}
+
+#right_block {
+    overflow: hidden;
+    width: 402px;
+    float: right;
+    margin: 0;
+    padding: 0;
+}
+
+#sendToFriendLink {
+    float: right;
+    padding-top: 15px;
+    text-align: right;
+    width: 160px;
+}
+
+.print_contact_info {
+    display: none;
+}
+
+.print_disclaimer {
+    display: none;
+}
+
+.album-nav {
+    border-top: 1px solid #CCCCCC;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.album-nav li.prev {
+    float: left;
+    text-align: left;
+}
+
+.album-nav li.next {
+    float: right;
+    text-align: left;
+}
+
+.album-nav li .album-nav-desc {
+    float: left;
+    width: 75%;
+}
+
+.album-nav h5 {
+    text-align: left;
+    padding: 0;
+}
+
+.album-nav h4 {
+    text-align: left;
+    padding: 0;
+}
+
+/* Bullet List (Cactus) */
+ul.bullets li {
+    list-style: disc;
+}
+
+.txtleft {
+    text-align: left;
+}
+
+/* Newsletter (Cactus) */
+
+.newsItem {
+    background: #f0f0f0;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 0 0 15px 0;
+}
+
+.newsTitle a {
+    font-size: 12pt;
+    text-align: left !important;
+    margin: 0;
+    text-decoration: none;
+}
+
+.newsDate {
+    font-size: 8pt;
+    color: #666;
+    margin: 0 0 8px 0;
+}
+
+.newsSummary {
+
+}
+
+#pageFunctions {
+    width: 60px;
+    float: right;
+}
