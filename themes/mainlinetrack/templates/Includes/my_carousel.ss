@@ -7,7 +7,7 @@
             <div class="item" id="$Name">
             <% end_if %>
             <div class="view-full-image">
-                <a href="$Filename" data-lightbox="carousel"><img title="view full size image" alt="view full size image" src="$BaseHref/themes/mainlinetrack/images/zoomin.png"/></a>
+                <a href="$Filename" data-lightbox="carousel2"><img title="view full size image" alt="view full size image" src="$BaseHref/themes/mainlinetrack/images/zoomin.png"/></a>
             </div>
             <a href="$Filename" data-lightbox="carousel"><img title="$Title" alt="$Title" src="$PaddedImage(368,206).URL"/></a>
         </div>
@@ -23,7 +23,9 @@
         <% end_if%>
         <div id="thumbnail-slider" class="gallery-thumbs">
                     <% loop $Picture %>
-                        <a id="$Name" href="#" onclick="changeActiveItem($pos);"><img  id="$Name" title="$Title" alt="$Title" src="$PaddedImage(90,51).URL"></a>
+                        <a id="$Name" href="#" onclick="changeActiveItem($pos);">
+                            <img  id="$Name" title="$Title" alt="$Title" src="$PaddedImage(90,51).URL">
+                        </a>
                     <% end_loop %>
          </div>
         <% if $Picture.count > 3%>
@@ -46,7 +48,7 @@
     /* --------------------------------------
 -- Settings and init
 -------------------------------------- */
-    var giImgTotal = $Picture.count + 2 ; /* Number of images in gallery */
+    var giImgTotal = $Picture.count + 1 ; /* Number of images in gallery */
     var giCurrentImage = 1; /* Image displayed on init */
 
     var giSliderPosition = 1; /* Initial position for scroller */
