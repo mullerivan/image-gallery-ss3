@@ -2,3 +2,4 @@ silverstripe-cache/*
 silverstripe.log
 .idea
 _ss_environment.php
+assets/*

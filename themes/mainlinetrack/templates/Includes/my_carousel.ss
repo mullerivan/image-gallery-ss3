@@ -20,19 +20,19 @@
     <br>
     <div id="gallery-thumbnails">
         <% if $Picture.count > 3%>
-            <img alt="Previous image" class="scroll-arrow" id="rew-link"
-                 src="$BaseHref/themes/mainlinetrack/images/arrow-scroll-left.png">
+            <a class="btn" href="#"><img alt="Previous image" class="scroll-arrow" id="rew-link"
+                 src="$BaseHref/themes/mainlinetrack/images/arrow-scroll-left.png"></a>
 
         <% end_if%>
         <div id="thumbnail-slider" class="gallery-thumbs">
             <% loop $Picture %>
-                <a id="$Name" href="#" onclick="changeActiveItem($pos);"><img id="$Name" title="$Title" alt="$Title"
+                <a id="$Name" href="#" onclick="changeActiveItem($pos);"><img id="$Name" title="$Title" alt="$Title" class="img-thumbnail"
                                                                               src="$PaddedImage(90,51).URL"></a>
             <% end_loop %>
         </div>
         <% if $Picture.count > 3%>
-            <img alt="Next image" class="scroll-arrow" id="ffw-link"
-                 src="$BaseHref/themes/mainlinetrack/images/arrow-scroll-right.png">
+        <a class="btn" href="#"><img alt="Next image" class="scroll-arrow btn" id="ffw-link"
+                 src="$BaseHref/themes/mainlinetrack/images/arrow-scroll-right.png"> </a>
         <% end_if%>
 
     </div>
@@ -65,9 +65,9 @@
 
     .gallery-thumbs a img {
         border: 2px solid #5A5A5A;
-        height: 45px;
+        /*height: 45px;*/
         margin: 0 1px;
-        width: 66px;
+        /*width: 66px;*/
     }
 
     .gallery-thumbs a img:hover {
@@ -97,11 +97,16 @@
     #rew-link {
         left: -10px;
     }
+    #gallery-thumbnails img:active{
+        
 
-    #gallery-thumbnails img.scroll-arrow:hover {
-        filter: alpha(opacity=80);
-        opacity: 0.7;
+        filter: alpha(opacity=50);
+        opacity: 0.5;
     }
+    /*#gallery-thumbnails img.scroll-arrow:hover {*/
+        /*filter: alpha(opacity=80);*/
+        /*opacity: 0.7;*/
+    /*}*/
 
     #gallery-thumbnails img.arrow-inactive,
     #gallery-thumbnails img.arrow-inactive:hover {
@@ -112,7 +117,7 @@
     }
 
     .scroll-arrow {
-        height: 50px;;
+        height: 55px;;
     }
 </style>
 
@@ -121,14 +126,14 @@
     /* --------------------------------------
 -- Settings and init
 -------------------------------------- */
-    var giImgTotal = $Picture.count +1;
+    var giImgTotal = $Picture.count ;
     /* Number of images in gallery */
     var giCurrentImage = 1;
     /* Image displayed on init */
 
     var giSliderPosition = 1;
     /* Initial position for scroller */
-    var giThumbsShown = 3;
+    var giThumbsShown = 2.5;
     /* Thumbnails shown on scroller */
     var giTotalPositions = giImgTotal - giThumbsShown;
     /* Number of possible positions for scroller */
@@ -166,7 +171,7 @@
             if (giSliderPosition > giTotalPositions) giSliderPosition = giTotalPositions;
         }
         jQuery("#thumbnail-slider").animate({
-            left: "-" + 72 * giSliderPosition + "px"
+            left: "-" + 96 * giSliderPosition + "px"
         });
 
         showHideSliderButtons();
@@ -183,7 +188,7 @@
         }
 
         jQuery("#thumbnail-slider").animate({
-            left: "-" + 72 * giSliderPosition + "px"
+            left: "-" + 96 * giSliderPosition + "px"
         });
     }
 
@@ -252,7 +257,7 @@
         });
     });
     jQuery("#thumbnail-slider").animate({
-        left: "-" + 72 * 0 + "px"
+        left: "-" + 96 * 0 + "px"
     });
     toggleSliderArrows(0, 1)
     //
