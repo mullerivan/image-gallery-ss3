@@ -98,7 +98,7 @@
         left: -10px;
     }
     #gallery-thumbnails img:active{
-        
+
 
         filter: alpha(opacity=50);
         opacity: 0.5;
@@ -126,6 +126,7 @@
     /* --------------------------------------
 -- Settings and init
 -------------------------------------- */
+    var ImgSize = 96;
     var giImgTotal = $Picture.count ;
     /* Number of images in gallery */
     var giCurrentImage = 1;
@@ -133,7 +134,7 @@
 
     var giSliderPosition = 1;
     /* Initial position for scroller */
-    var giThumbsShown = 2.5;
+    var giThumbsShown = 2.4;
     /* Thumbnails shown on scroller */
     var giTotalPositions = giImgTotal - giThumbsShown;
     /* Number of possible positions for scroller */
@@ -171,7 +172,7 @@
             if (giSliderPosition > giTotalPositions) giSliderPosition = giTotalPositions;
         }
         jQuery("#thumbnail-slider").animate({
-            left: "-" + 96 * giSliderPosition + "px"
+            left: "-" + ImgSize * giSliderPosition + "px"
         });
 
         showHideSliderButtons();
@@ -188,7 +189,7 @@
         }
 
         jQuery("#thumbnail-slider").animate({
-            left: "-" + 96 * giSliderPosition + "px"
+            left: "-" + ImgSize * giSliderPosition + "px"
         });
     }
 
@@ -212,6 +213,7 @@
         }
     }
 
+    //DOCUMENT READY
     jQuery(document).ready(function () {
         thumbnailCount = 0;
         jQuery("#thumbnail-slider a").each(function () {
@@ -256,11 +258,8 @@
             return false;
         });
     });
-    jQuery("#thumbnail-slider").animate({
-        left: "-" + 96 * 0 + "px"
-    });
+    //CUSTOM
     toggleSliderArrows(0, 1)
-    //
     jQuery('.carousel').carousel({interval: 0 });
     function changeActiveItem(pos) {
         jQuery('.carousel').carousel(pos - 1)
