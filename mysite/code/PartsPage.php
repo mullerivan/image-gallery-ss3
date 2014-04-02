@@ -8,8 +8,9 @@
 		'StockNo' => 'Varchar',   
 		'Size' => 'Varchar',     
 		'Extras' => 'Text',   
-		'Price' => 'Varchar'
-		);
+		'Price' => 'Varchar',
+        'multimedia_display' => 'Boolean'
+        );
         public static $many_many = array(
             'Picture' => 'Image'
         );
@@ -17,7 +18,7 @@
 
 		function getCMSFields() {
 			$fields = parent::getCMSFields();
-
+            $fields->addFieldToTab('Root.Main', new CheckboxField('multimedia_display','Multimedia display?'),'Content');
 			$fields->addFieldToTab('Root.Main', new TextField('ShortDescription', 'Short description'), 'Content');
 			$fields->addFieldToTab('Root.Specs', new TextField('StockNo', 'Stock No.'));
 			$fields->addFieldToTab('Root.Specs', new TextField('Size', 'Size'));

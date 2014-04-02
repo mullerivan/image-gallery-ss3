@@ -19,7 +19,7 @@
 </div>     <%--END myCarousel--%>
     <br>
     <div id="gallery-thumbnails">
-        <% if $Picture.count > 3%>
+        <% if $Picture.count > 3 && $multimedia_display %>
             <a class="btn" href="#"><img alt="Previous image" class="scroll-arrow" id="rew-link"
                  src="$BaseHref/themes/mainlinetrack/images/arrow-scroll-left.png"></a>
 
@@ -30,7 +30,7 @@
                                                                               src="$PaddedImage(90,51).URL"></a>
             <% end_loop %>
         </div>
-        <% if $Picture.count > 3%>
+        <% if $Picture.count  > 3 && $multimedia_display %>
         <a class="btn" href="#"><img alt="Next image" class="scroll-arrow btn" id="ffw-link"
                  src="$BaseHref/themes/mainlinetrack/images/arrow-scroll-right.png"> </a>
         <% end_if%>
@@ -43,7 +43,7 @@
     </div>
 </div>
 
-
+<% if $multimedia_display %>
 
 <style type="text/css">
     /* ------------------------------------------------------ */
@@ -120,7 +120,7 @@
         height: 55px;;
     }
 </style>
-
+<% end_if %>
 
 <script>
     /* --------------------------------------
